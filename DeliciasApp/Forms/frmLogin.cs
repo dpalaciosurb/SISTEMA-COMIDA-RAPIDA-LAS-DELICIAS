@@ -22,14 +22,21 @@ namespace DeliciasApp.Forms
             string usuario = txtUsuario.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(password))
+            if (usuario == "admin" && password == "admin123")
             {
-                MessageBox.Show("Ingrese usuario y contraseña.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                SesionActual.NombreUsuario = "Dereck Palacios";
+                SesionActual.Rol = "Administrador";
 
-            if ((usuario == "admin" && password == "admin123") || (usuario == "cajero" && password == "cajero123"))
+                frmMenu menu = new frmMenu();
+                this.Hide();
+                menu.FormClosed += (s, args) => this.Close();
+                menu.Show();
+            }
+            else if (usuario == "cajero" && password == "cajero123")
             {
+                SesionActual.NombreUsuario = "Cajero de Turno";
+                SesionActual.Rol = "Cajero";
+
                 frmMenu menu = new frmMenu();
                 this.Hide();
                 menu.FormClosed += (s, args) => this.Close();
@@ -37,9 +44,7 @@ namespace DeliciasApp.Forms
             }
             else
             {
-                MessageBox.Show("Credenciales incorrectas.", "Error de acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPassword.Clear();
-                txtUsuario.Focus();
+                MessageBox.Show("Credenciales incorrectas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

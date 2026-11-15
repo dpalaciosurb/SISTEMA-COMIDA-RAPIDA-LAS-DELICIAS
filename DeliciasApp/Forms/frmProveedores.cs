@@ -26,6 +26,9 @@ namespace DeliciasApp.Forms
         {
             CargarDatosGrid();
             LimpiarFormulario();
+
+            this.Text = $"Gestión de Proveedores — Operando como: {SesionActual.NombreUsuario} ({SesionActual.Rol})";
+
         }
 
         private void CargarDatosGrid()
@@ -80,7 +83,7 @@ namespace DeliciasApp.Forms
                 Activo = chkActivo.Checked
             };
 
-            if (_proveedorBLL.Guardar(modelo))
+            if (!_proveedorBLL.Guardar(modelo))
             {
                 MessageBox.Show(_esEdicion ? "Proveedor actualizado correctamente." : "Proveedor guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarDatosGrid();
@@ -103,7 +106,7 @@ namespace DeliciasApp.Forms
             var confirmacion = MessageBox.Show("¿Está seguro de eliminar este proveedor?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirmacion == DialogResult.Yes)
             {
-                if (_proveedorBLL.Eliminar(txtIdProveedor.Text))
+                if (!_proveedorBLL.Eliminar(txtIdProveedor.Text))
                 {
                     MessageBox.Show("Proveedor eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarDatosGrid();

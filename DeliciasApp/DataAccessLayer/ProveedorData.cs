@@ -94,7 +94,7 @@ namespace DeliciasApp.DataAccessLayer
                     cmd.Parameters.AddWithValue("@idProveedor", idProveedor);
                     conexion.Open();
                     int filas = cmd.ExecuteNonQuery();
-                    return filas > 0;
+                    return filas > 0; // Borrará siempre al proveedor y sus dependencias
                 }
             }
         }

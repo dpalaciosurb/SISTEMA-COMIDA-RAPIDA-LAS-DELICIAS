@@ -78,6 +78,7 @@
     <Compile Include="Forms\frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SesionActual.cs" />
     <Compile Include="Models\CategoriaModel.cs" />
     <Compile Include="Models\ClienteModel.cs" />
     <Compile Include="Models\ProductoModel.cs" />

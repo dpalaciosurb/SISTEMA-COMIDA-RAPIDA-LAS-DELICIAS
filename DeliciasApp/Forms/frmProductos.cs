@@ -24,6 +24,8 @@ namespace DeliciasApp.Forms
             InitializeComponent();
             _productoBLL = new ProductoBLL();
             _proveedorBLL = new ProveedorBLL();
+
+            this.Text = $"Gestión de Productos — Operando como: {SesionActual.NombreUsuario} ({SesionActual.Rol})";
         }
 
         private void frmProductos_Load(object sender, EventArgs e)
@@ -147,7 +149,7 @@ namespace DeliciasApp.Forms
                 Activo = chkActivo.Checked
             };
 
-            if (_productoBLL.Guardar(modelo))
+            if (!_productoBLL.Guardar(modelo))
             {
                 MessageBox.Show(_esEdicion ? "Producto actualizado correctamente." : "Producto guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarDatosGrid();
@@ -170,7 +172,7 @@ namespace DeliciasApp.Forms
             var confirmacion = MessageBox.Show("¿Está seguro de eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirmacion == DialogResult.Yes)
             {
-                if (_productoBLL.Eliminar(txtIdProducto.Text))
+                if (!_productoBLL.Eliminar(txtIdProducto.Text))
                 {
                     MessageBox.Show("Producto eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarDatosGrid();

@@ -26,3 +26,17 @@ C:\Users\Shark\Desktop\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.cs
 C:\Users\Shark\Desktop\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.csproj.CoreCompileInputs.cache
 C:\Users\Shark\Desktop\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.exe
 C:\Users\Shark\Desktop\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.pdb
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\bin\Debug\DeliciasApp.exe.config
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\bin\Debug\DeliciasApp.exe
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\bin\Debug\DeliciasApp.pdb
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.csproj.AssemblyReference.cache
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.exe.config
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.Forms.frmLogin.resources
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.Forms.frmMenu.resources
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.Forms.frmProductos.resources
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.Forms.frmProveedores.resources
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.Properties.Resources.resources
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.csproj.GenerateResource.cache
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.csproj.CoreCompileInputs.cache
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.exe
+C:\Users\Shark\OneDrive\Música\DeliciasComidaRapida\DeliciasApp\obj\Debug\DeliciasApp.pdb

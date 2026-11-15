@@ -296,8 +296,9 @@ create or alter procedure sp_EliminarProducto
 as
 begin
     set nocount on;
-    delete from Productos 
-    where idProducto = @idProducto;
+    delete from DetalleVenta where idProducto = @idProducto;
+    
+    delete from Productos where idProducto = @idProducto;
 end;
 go
 
@@ -335,12 +336,27 @@ create or alter procedure sp_EliminarProveedor
 as
 begin
     set nocount on;
-    delete from Proveedores
-    where idProveedor = @idProveedor;
+    delete from DetalleVenta where idProducto in (select idProducto from Productos where idProveedor = @idProveedor);
+    delete from Productos where idProveedor = @idProveedor;
+
+    delete from Proveedores where idProveedor = @idProveedor;
 end;
 go
 
 
+create or alter procedure sp_EliminarCategoria
+    @idCategoria varchar(10)
+as
+begin
+    set nocount on;
+    -- Si tiene productos asociados, borra o desvincula primero si lo deseas, o borra directo:
+    delete from Categorias where idCategoria = @idCategoria;
+end;
+go
+
+
+exec sp_EliminarCategoria 'CAT-07';
+go
 
 
 exec sp_InsertarRol 'Administrador', 1;
@@ -353,11 +369,21 @@ exec sp_InsertarCliente 'Cliente General', '00000000', 'Managua', 1;
 
 exec sp_InsertarCategoria 'Hamburguesas', 'Combos y hamburguesas', 1;
 exec sp_InsertarCategoria 'Bebidas', 'Gaseosas y jugos', 1;
+exec sp_InsertarCategoria 'Hamburguesas', 'Hamburguesas y combos especiales', 1;
+exec sp_InsertarCategoria 'Pizzas', 'Pizzas medianas y familiares', 1;
+exec sp_InsertarCategoria 'Bebidas', 'Gaseosas, jugos y te frio', 1;
+exec sp_InsertarCategoria 'Complementos', 'Papas fritas, aros de cebolla y nuggets', 1;
+exec sp_InsertarCategoria 'Pollo Frito', 'Piezas de pollo crujiente y combos', 1;
+exec sp_InsertarCategoria 'Postres', 'Helados, pays y reposteria', 1;
+go
+
 
 exec sp_InsertarProveedor 'Distribuidora Alimentos SA', 'Juan Perez', '88889999', 'Managua', 1;
 
 exec sp_InsertarProducto 'CAT-01', 'PROV-01', 'Hamburguesa Doble', 120.00, 50, 1;
 exec sp_InsertarProducto 'CAT-02', 'PROV-01', 'Gaseosa', 30.00, 100, 1;
+
+
 go
 
 

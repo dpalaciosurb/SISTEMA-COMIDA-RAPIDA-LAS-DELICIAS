@@ -44,5 +44,13 @@ namespace DeliciasApp.Forms
             frmProveedores formProveedores = new frmProveedores();
             formProveedores.Show();
         }
+
+        
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            this.Text = $"SISTEMA DE DELICIAS — Operando como: {SesionActual.NombreUsuario} ({SesionActual.Rol})";
+
+        }
     }
 }
